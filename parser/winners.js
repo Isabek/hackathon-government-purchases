@@ -22,7 +22,7 @@ function parsePage(page, cb) {
 
     requester.post("http://zakupki.okmot.kg", "/pub/winners.action", form, function (err, body) {
         if (!err) {
-            writer("zakupki.csv", arrayOfObjToTsv(arrMap(winnersParser.parse(body))).concat("\n"), function (err) {
+            writer("winners.csv", arrayOfObjToTsv(arrMap(winnersParser.parse(body))).concat("\n"), function (err) {
                 process.stdout.write("\rPage:" + page);
                 cb(err);
             });
