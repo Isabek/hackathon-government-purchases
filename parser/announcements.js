@@ -10,7 +10,7 @@ function parsePages(page) {
     if (page <= PAGE_COUNT) parsePage(page, function () {
         parsePages(page + 1);
     });
-    else console.log('done');
+    else console.log('\nDone');
 }
 
 function parsePage(page, cb) {
